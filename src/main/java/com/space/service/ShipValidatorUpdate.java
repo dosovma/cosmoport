@@ -36,7 +36,7 @@ public class ShipValidatorUpdate implements Validator {
 
         if (ship.getProdDate() != null) {
             long date = ship.getProdDate().getTime();
-            if (date < 26192235600000L || date > 33103198799000L)
+            if (date < 26192160000000L || date > 33137337600000L)
                 errors.rejectValue("prodDate", "value.negative");
         }
 

@@ -133,9 +133,8 @@ public class ShipServiceImpl implements ShipService {
     private Double calculateRating(Ship ship) {
         Double speed = ship.getSpeed();
         double k = !ship.getUsed() ? 1.0 : 0.5;
-        int currentYear = new Date(33103198801000L).getYear();
-        int prodDate = ship.getProdDate().getYear();
-        double r = (80 * speed * k) / (currentYear - prodDate + 1);
+        int prodDate = ship.getProdDate().getYear() + 1900;
+        double r = (80 * speed * k) / (3019 - prodDate + 1);
         return (Math.round(r * 100)) / 100.0;
     }
 

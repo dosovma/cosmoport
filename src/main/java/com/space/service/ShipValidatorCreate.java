@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 @Service
 public class ShipValidatorCreate implements Validator {
     @Override
@@ -28,7 +31,8 @@ public class ShipValidatorCreate implements Validator {
             errors.rejectValue("speed", "value.negative");
         else {
             long date = ship.getProdDate().getTime();
-            if (date < 26192235600000L || date > 33103198799000L)
+            //new GregorianCalendar(2800, 0, 0).getTime().getTime();
+            if (date < 26192160000000L || date > 33137337600000L)
                 errors.rejectValue("prodDate", "value.negative");
         }
 
