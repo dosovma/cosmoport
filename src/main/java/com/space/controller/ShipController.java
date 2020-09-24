@@ -12,6 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/rest")
+//Test git exchange
 public class ShipController {
 
     private final ShipService shipService;
